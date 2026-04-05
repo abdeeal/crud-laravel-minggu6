@@ -22,11 +22,13 @@ Aplikasi ini mengusung arsitektur *Client-Server* sederhana dimana Frontend (HTM
 ### B. Halaman Tampil Data & DataTables (`data.html` - READ & DELETE)
 - **Fungsi:** Menampilkan seluruh data mahasiswa menggunakan plugin jQuery DataTables.
 - **Alur READ (Tampil Data):** 
+
   1. Halaman dimuat.
   2. jQuery DataTables melakukan *AJAX Request* (metode `GET`) ke endpoint `/api/mahasiswa`.
   3. Server mengirimkan respons berupa *array of objects* dalam format **JSON**.
   4. DataTables menangkap JSON tersebut dan merendernya secara otomatis ke dalam bentuk tabel interaktif yang sudah dilengkapi dengan fitur *Search* dan *Pagination*.
 - **Alur DELETE (Hapus Data):**
+
   1. Pengguna menekan tombol "Hapus" pada salah satu baris data.
   2. Muncul dialog konfirmasi bawaan browser.
   3. Jika dikonfirmasi, jQuery mengirimkan *AJAX Request* (metode `DELETE`) ke `/api/mahasiswa/:id`.
@@ -35,11 +37,13 @@ Aplikasi ini mengusung arsitektur *Client-Server* sederhana dimana Frontend (HTM
 ### C. Halaman Form (`form.html` - CREATE & UPDATE)
 - **Fungsi:** Halaman dinamis yang berfungsi ganda, yaitu untuk menambah data baru atau mengedit data yang sudah ada.
 - **Alur CREATE (Tambah Data):**
+
   1. Pengguna masuk melalui menu "Tambah Data" (URL bersih: `form.html`).
   2. Pengguna mengisi form NIM, Nama, dan Jurusan, lalu menekan "Simpan".
   3. jQuery membungkus inputan form menjadi objek JSON dan mengirimkan *AJAX Request* (metode `POST`) ke `/api/mahasiswa`.
   4. Server menambahkan data tersebut ke *array*, mengembalikan status sukses, dan mengarahkan (*redirect*) pengguna kembali ke halaman `data.html`.
 - **Alur UPDATE (Edit Data):**
+
   1. Pengguna menekan tombol "Edit" pada tabel, yang akan mengarahkan mereka ke halaman form dengan membawa parameter ID (contoh: `form.html?id=1`).
   2. jQuery mendeteksi parameter `id` di URL, lalu melakukan *Request* `GET` ke `/api/mahasiswa/1` untuk mengambil data lama.
   3. Form terisi otomatis dengan data lama tersebut.
