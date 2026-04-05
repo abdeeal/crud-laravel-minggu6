@@ -1,7 +1,9 @@
 # Laporan Tugas 2 Praktikum Web - Aplikasi Pendataan Mahasiswa
 
 **Nama:** Abdee Alamsyah Noer Siyam 
+
 **NIM:** 2311102247 
+
 **Mata Kuliah:** Praktikum Analisis Berbasis Pemrograman 
 
 ---
@@ -19,7 +21,8 @@ Aplikasi ini mengusung arsitektur *Client-Server* sederhana dimana Frontend (HTM
 
 ### B. Halaman Tampil Data & DataTables (`data.html` - READ & DELETE)
 - **Fungsi:** Menampilkan seluruh data mahasiswa menggunakan plugin jQuery DataTables.
-- **Alur READ (Tampil Data):** 1. Halaman dimuat.
+- **Alur READ (Tampil Data):** 
+  1. Halaman dimuat.
   2. jQuery DataTables melakukan *AJAX Request* (metode `GET`) ke endpoint `/api/mahasiswa`.
   3. Server mengirimkan respons berupa *array of objects* dalam format **JSON**.
   4. DataTables menangkap JSON tersebut dan merendernya secara otomatis ke dalam bentuk tabel interaktif yang sudah dilengkapi dengan fitur *Search* dan *Pagination*.
